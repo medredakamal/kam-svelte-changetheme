@@ -44,10 +44,17 @@
   h1 {
     text-align: center;
   }
+  button {
+    appearance: none;
+    border: none;
+    outline: none;
+    font-weight: bold;
+    padding: 12px 15px;
+  }
 
   /* Light Theme */
-  .theme-black {
-    background-color: #000;
+  .theme-light {
+    background-color: #fff;
   }
 
   /* Black Theme */
