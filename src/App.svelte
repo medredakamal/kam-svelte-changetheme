@@ -14,10 +14,13 @@
 
 <main class={"theme-" + activetheme}>
   <h1>Hello {user}, {welcome}</h1>
-  <button on:click={() => handleTheme("light")}>Light Mode</button>
-  <button on:click={() => handleTheme("black")}>Black Mode</button>
-  <button on:click={() => handleTheme("green")}>Green Mode</button>
-  <button on:click={() => handleTheme("blue")}>Blue Mode</button>
+  <div class="buttons">
+    <button on:click={() => handleTheme("light")}>Light Mode</button>
+    <button on:click={() => handleTheme("black")}>Black Mode</button>
+    <button on:click={() => handleTheme("green")}>Green Mode</button>
+    <button on:click={() => handleTheme("blue")}>Blue Mode</button>
+  </div>
+
   <section>
     <div class="km-cards">
       <div class="km-card">
@@ -50,6 +53,16 @@
     outline: none;
     font-weight: bold;
     padding: 12px 15px;
+    box-shadow: 0px 0px 0px 3px 4px rgba(0, 0, 0, 0.4);
+  }
+
+  /* Buttons */
+  .buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-flow: dense;
+    grid-gap: 15px;
+    padding: 0 10px;
   }
 
   /* Light Theme */
