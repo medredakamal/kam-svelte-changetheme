@@ -1,30 +1,67 @@
 <script>
-	export let name;
+  export let activetheme;
+  export let welcome;
+  export let user;
+  export let orders;
+  export let products;
+  export let earnings;
+  export let active_users;
+
+  function handleTheme(theme) {
+    activetheme = theme;
+  }
 </script>
 
-<main>
-	<h1>Hello {name}!</h1>
-	<p>Visit the <a href="https://svelte.dev/tutorial">Svelte tutorial</a> to learn how to build Svelte apps.</p>
+<main class={"theme-" + activetheme}>
+  <h1>Hello {user}, {welcome}</h1>
+  <button on:click={() => handleTheme("light")}>Light Mode</button>
+  <button on:click={() => handleTheme("black")}>Black Mode</button>
+  <button on:click={() => handleTheme("green")}>Green Mode</button>
+  <button on:click={() => handleTheme("blue")}>Blue Mode</button>
+  <section>
+    <div class="km-cards">
+      <div class="km-card">
+        <span>Orders</span>
+        <span>{orders}</span>
+      </div>
+      <div class="km-card">
+        <span>Products</span>
+        <span>{products}</span>
+      </div>
+      <div class="km-card">
+        <span>Earnings</span>
+        <span>{earnings}</span>
+      </div>
+      <div class="km-card">
+        <span>Active Users</span>
+        <span>{active_users}</span>
+      </div>
+    </div>
+  </section>
 </main>
 
 <style>
-	main {
-		text-align: center;
-		padding: 1em;
-		max-width: 240px;
-		margin: 0 auto;
-	}
+  h1 {
+    text-align: center;
+  }
 
-	h1 {
-		color: #ff3e00;
-		text-transform: uppercase;
-		font-size: 4em;
-		font-weight: 100;
-	}
+  /* Light Theme */
+  .theme-black {
+    background-color: #000;
+  }
 
-	@media (min-width: 640px) {
-		main {
-			max-width: none;
-		}
-	}
+  /* Black Theme */
+  .theme-black {
+    background-color: #000;
+  }
+
+  /* Green Theme */
+  .theme-green {
+    background-color: #32cc7f;
+  }
+
+  /* Black Theme */
+  .theme-blue {
+    background-color: #2b7ae2;
+  }
 </style>
