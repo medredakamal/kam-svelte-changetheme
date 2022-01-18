@@ -54,6 +54,10 @@
     body {
       margin: 0;
       padding: 0;
+      height: 99vh;
+      display: flex;
+      flex-direction: col;
+      align-items: center;
     }
   </style>
 </svelte:head>
