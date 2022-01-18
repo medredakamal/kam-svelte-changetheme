@@ -12,6 +12,8 @@
   }
 </script>
 
+<svelte:body style="padding:0;margin:0;" />
+
 <main class={"theme-" + activetheme}>
   <h1>Hello {user}, {welcome}</h1>
   <div class="buttons">
@@ -53,7 +55,8 @@
     outline: none;
     font-weight: bold;
     padding: 12px 15px;
-    box-shadow: 0px 0px 0px 3px 4px rgba(0, 0, 0, 0.4);
+    background: none;
+    border: 1.1px solid #000;
   }
 
   /* Buttons */
@@ -63,6 +66,36 @@
     grid-auto-flow: dense;
     grid-gap: 15px;
     padding: 0 10px;
+  }
+
+  /* Cards */
+  .km-cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+  }
+  @media (max-width: 696px) {
+    .km-cards {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  .km-card {
+    padding: 10px 15px;
+    margin: 5px;
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 0px 0px 2px 0.4px rgba(0, 0, 0, 0.25);
+  }
+
+  .km-card > span {
+    display: block;
+    text-align: center;
+    font-size: 1rem;
+  }
+
+  .km-card > span:first-child {
+    margin-bottom: 7.75px;
+    font-weight: bold;
   }
 
   /* Light Theme */
