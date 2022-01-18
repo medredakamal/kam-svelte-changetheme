@@ -45,6 +45,19 @@
   </section>
 </main>
 
+<svelte:head>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      margin: 0;
+      padding: 0;
+    }
+  </style>
+</svelte:head>
+
 <style>
   h1 {
     text-align: center;
