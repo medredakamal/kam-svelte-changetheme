@@ -115,7 +115,6 @@
   .km-card {
     padding: 10px 15px;
     margin: 5px;
-    border-radius: 10px;
     background-color: #fff;
     border: 1px solid #000;
   }
