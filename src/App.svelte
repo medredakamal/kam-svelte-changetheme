@@ -15,49 +15,64 @@
 <svelte:body style="padding:0;margin:0;" />
 
 <main class={"theme-" + activetheme}>
-  <h1>Hello {user}, {welcome}</h1>
-  <div class="buttons">
-    <button on:click={() => handleTheme("light")}>Light Mode</button>
-    <button on:click={() => handleTheme("black")}>Black Mode</button>
-    <button on:click={() => handleTheme("green")}>Green Mode</button>
-    <button on:click={() => handleTheme("blue")}>Blue Mode</button>
-  </div>
-
-  <section>
-    <div class="km-cards">
-      <div class="km-card">
-        <span>Orders</span>
-        <span>{orders}</span>
-      </div>
-      <div class="km-card">
-        <span>Products</span>
-        <span>{products}</span>
-      </div>
-      <div class="km-card">
-        <span>Earnings</span>
-        <span>{earnings}</span>
-      </div>
-      <div class="km-card">
-        <span>Active Users</span>
-        <span>{active_users}</span>
-      </div>
+  <div class="app-content">
+    <h1>Hello {user}, {welcome}</h1>
+    <div class="buttons">
+      <button on:click={() => handleTheme("light")}>Light Mode</button>
+      <button on:click={() => handleTheme("black")}>Black Mode</button>
+      <button on:click={() => handleTheme("green")}>Green Mode</button>
+      <button on:click={() => handleTheme("blue")}>Blue Mode</button>
     </div>
-  </section>
+
+    <section>
+      <div class="km-cards">
+        <div class="km-card">
+          <span>Orders</span>
+          <span>{orders}</span>
+        </div>
+        <div class="km-card">
+          <span>Products</span>
+          <span>{products}</span>
+        </div>
+        <div class="km-card">
+          <span>Earnings</span>
+          <span>{earnings}</span>
+        </div>
+        <div class="km-card">
+          <span>Active Users</span>
+          <span>{active_users}</span>
+        </div>
+      </div>
+    </section>
+  </div>
 </main>
 
 <svelte:head>
   <style>
-    * {
+    *,
+    html {
       margin: 0;
       padding: 0;
     }
     body {
       margin: 0;
       padding: 0;
-      height: 99vh;
+      height: 100%;
       display: flex;
-      flex-direction: col;
+      flex-direction: column;
       align-items: center;
+    }
+    main {
+      height: 100%;
+      width: 100%;
+    }
+    h1 {
+      margin: 19px 0;
+    }
+    .app-content {
+      max-width: 779px;
+      margin: auto;
+      padding: 0 20px;
     }
   </style>
 </svelte:head>
@@ -101,7 +116,7 @@
     margin: 5px;
     border-radius: 10px;
     background-color: #fff;
-    box-shadow: 0px 0px 2px 0.4px rgba(0, 0, 0, 0.25);
+    border: 1px solid #000;
   }
 
   .km-card > span {
@@ -124,14 +139,50 @@
   .theme-black {
     background-color: #000;
   }
+  .theme-black h1 {
+    color: #fff;
+  }
+  .theme-black button {
+    color: #fff;
+    border-color: #fff;
+  }
+  .theme-black .km-card {
+    background-color: #000;
+    color: #fff;
+    border-color: #fff;
+  }
 
   /* Green Theme */
   .theme-green {
     background-color: #32cc7f;
   }
+  .theme-green h1 {
+    color: #fff;
+  }
+  .theme-green button {
+    color: #fff;
+    border-color: #fff;
+  }
+  .theme-green .km-card {
+    background-color: transparent;
+    color: #fff;
+    border-color: #fff;
+  }
 
   /* Black Theme */
   .theme-blue {
     background-color: #2b7ae2;
+  }
+  .theme-blue h1 {
+    color: #fff;
+  }
+  .theme-blue button {
+    color: #fff;
+    border-color: #fff;
+  }
+  .theme-blue .km-card {
+    background-color: transparent;
+    color: #fff;
+    border-color: #fff;
   }
 </style>
