@@ -82,6 +82,7 @@
     text-align: center;
   }
   button {
+    cursor: pointer;
     appearance: none;
     border: none;
     outline: none;
